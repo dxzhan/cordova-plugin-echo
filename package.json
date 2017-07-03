@@ -31,5 +31,13 @@
     }
   ],
   "author": "zhandx@163.com",
-  "license": "Apache 2.0"
+  "license": "Apache 2.0",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dxzhan/cordova-plugin-echo.git"
+  },
+  "bugs": {
+    "url": "https://github.com/dxzhan/cordova-plugin-echo/issues"
+  },
+  "homepage": "https://github.com/dxzhan/cordova-plugin-echo#readme"
 }
