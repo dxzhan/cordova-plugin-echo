@@ -1,0 +1,53 @@
+<?xml version='1.0' encoding='utf-8'?>
+<plugin id="cordova-plugin-echo"
+        version="1.0.0"
+        xmlns="http://apache.org/cordova/ns/plugins/1.0"
+        xmlns:android="http://schemas.android.com/apk/res/android">
+    <name>EchoPlugin</name>
+    <description>Cordova Echo Plugin</description>
+    <author>dxzhan</author>
+    <license>Apache 2.0</license>
+    <keywords>cordova,echo</keywords>
+
+    <engines>
+      <engine name="cordova" version=">=5.4.1" />
+      <engine name="cordova-android" version=">=4.1.1"/>
+      <engine name="cordova-ios" version=">=3.9.0"/>
+    </engines>
+
+    <js-module name="EchoPlugin" src="www/echo.js">
+      <clobbers target="window.Echo" />
+    </js-module>
+
+    <platform name="android">
+        <config-file target="res/xml/config.xml" parent="/*">
+            <feature name="EchoPlugin" >
+                <param name="android-package" value="org.apache.cordova.echo.EchoPlugin"/>
+                <param name="onload" value="true" />
+            </feature>
+        </config-file>
+
+        <source-file src="src/android/EchoPlugin.java" target-dir="src/org/apache/cordova/echo" />
+
+        <lib-file src="src/android/libs/tlib_2.10-1.0.jar"/>
+
+        <info>
+            This plugin is only applicable for versions of cordova-android greater than 4.0. If you have a previous platform version, you do *not* need this plugin since the whitelist will be built in.
+        </info>
+    </platform>
+
+    <!-- iOS -->
+    <platform name="ios">
+      <config-file target="config.xml" parent="/*">
+        <feature name="EchoPlugin">
+          <param name="ios-package" value="HWPEchoPlugin" />
+          <param name="onload" value="true" />
+        </feature>
+      </config-file>
+
+      <source-file src="src/ios/EchoPlugin.swift" />
+
+    </platform>
+
+    <dependency id="cordova-plugin-add-swift-support"/>
+</plugin>
